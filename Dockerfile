@@ -26,7 +26,7 @@ ENV RAILS_SERVE_STATIC_FILES "true"
 
 ENV SECRET_KEY_BASE "7945dcec3bd1cabaf263a8cc264178ffefdee144225ca72534ced24b2c0fbae5837de689da62560ad0e8cde78235bf6f81d80d0fbb721f8f684cc74e670a5ff5"
 
-RUN rails assests:clobber && assests:precompile
+RUN rails assets:clobber && assets:precompile
 
 
 EXPOSE 3333
