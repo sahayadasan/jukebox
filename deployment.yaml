@@ -18,7 +18,7 @@ kind: Deployment
 metadata:
   name: d-web
 spec:
-  replicas: 5
+  replicas: 7
   template:
     metadata:
       labels:
@@ -28,12 +28,12 @@ spec:
       - name: web
         image: sahaya/jukebox:$BUILD_NUMBER
         env:
-        -name: RAILS_ENV
-         value: production
-        -name: PGPASSWORD
-         valueFrom:
-          secretKeyRef:
-            name: topsecret
-            key: pgpassword
+        - name: RAILS_ENV
+          value: production
+        - name: PGPASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: topsecret
+              key: pgpassword
         ports:
         - containerPort: 3333
