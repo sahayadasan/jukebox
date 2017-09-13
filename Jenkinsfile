@@ -30,7 +30,7 @@ pipeline {
     stage('build image') {
       steps {
         sh '''
-      docker build -t sahaya/jukebox:$BUILD_NUMBER
+      docker build -t sahaya/jukebox:$BUILD_NUMBER .
 '''
       }
     }
