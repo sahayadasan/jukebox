@@ -43,5 +43,14 @@ pipeline {
       }
     }
 
+    stage('push image to K8S') {
+      steps {
+        sh '''
+      envsubst < deployment.yaml | kubectl apply -f -
+      
+'''
+      }
+    }
+
   }
 }
